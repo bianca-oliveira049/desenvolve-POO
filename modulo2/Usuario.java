@@ -44,7 +44,7 @@ public class Usuario extends Pessoa{
 			Emprestimo novoEmp = new Emprestimo(dataAtual, dataDev, livro, this);
 			this.historicoEmprestimo.add(novoEmp);
 			
-			livro.validaDisponibilidade();
+			livro.setDisponivel();
 			
 			return true;
 		}
@@ -52,11 +52,9 @@ public class Usuario extends Pessoa{
 			for (int k = 0; k < users.size(); k++) {
 				for (int j = 0; j < users.get(k).getHistoricoEmprestimo().size(); j++) {
 					if (livro.equals(users.get(k).getHistoricoEmprestimo().get(j).getLivro())) {
-						if (dataAtual.before(users.get(k).getHistoricoEmprestimo().get(j).getDataDevolucao())) {
-							System.out.println("O livro esta indisponivel");
-							livro.imprime();
-							users.get(k).getHistoricoEmprestimo().get(j).imprime();
-						}
+						livro.validaDisponibilidade();
+						livro.imprime();
+						users.get(k).getHistoricoEmprestimo().get(j).imprime();
 					}
 				}
 			}
