@@ -22,6 +22,10 @@ public class Livro {
 	public void setGenero(String novoGenero) {
 		this.genero = novoGenero;
 	}
+	public void setDisponivel() {
+		if (this.disponivel) this.disponivel = false;
+		else this.disponivel = true;
+	}
 	
 	public String getTitulo() {
 		return this.titulo;
@@ -37,8 +41,8 @@ public class Livro {
 		return this.disponivel;
 	}
 	public void validaDisponibilidade() {
-		if (this.disponivel) this.disponivel = false;
-		else this.disponivel = true;
+		if (this.isDisponivel()) System.out.println("O livro esta disponível");	
+		else System.out.println("O livro esta indisponivel");
 	}
 	
 	public void imprime() {
