@@ -14,6 +14,6 @@ public class Main {
 		Livro livro1 = new Livro("Java for Begginers", autor1, "Tecnologia");
 		autor1.addObra(livro1);
 		user1.empresta(livro1, users);
-		user1.getHistoricoEmprestimo().get(0).imprime();
+		user2.empresta(livro1, users);
 	}
 }
