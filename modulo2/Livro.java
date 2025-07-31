@@ -6,11 +6,11 @@ public class Livro {
 	private String genero;
 	private boolean disponivel;
 	
-	public Livro(String titulo, Autor autor, String genero) {
+	public Livro(String titulo, Autor autor, String genero, boolean disponivel) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.genero = genero;
-		this.disponivel = true;
+		this.disponivel = disponivel;
 	}
 	
 	public void setTitulo(String novoTitulo) {
@@ -22,9 +22,8 @@ public class Livro {
 	public void setGenero(String novoGenero) {
 		this.genero = novoGenero;
 	}
-	public void setDisponivel() {
-		if (this.disponivel) this.disponivel = false;
-		else this.disponivel = true;
+	public void setDisponivel(boolean disponivel) {
+		this.disponivel = disponivel;
 	}
 	
 	public String getTitulo() {
